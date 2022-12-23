@@ -64,7 +64,7 @@ set menu-timeout 10000
   
 :znpe11
 #newbeepe
-set bootwim https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/BOOT/11PEX64.WIM?sign=Ez86E_Xi3m4DfrA7G-bbmEfDijM2XspfFUH3medeLTc=:0 ||
+set bootwim https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/BOOT/8PEX86.WIM?sign=xlnTBXQ9XdCF3WyNN5oPH9TVwNIptfc_dDWP8Vu0C6E=:0 ||
 goto wimbootpe
 
 :wimbootpe
