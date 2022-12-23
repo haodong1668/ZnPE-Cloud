@@ -1,0 +1,97 @@
+#!ipxe
+#prompt --key 0x02 --timeout 2000 Press Ctrl-B for the iPXE command line... && shell ||
+#ifopen net0
+#ifstat
+isset ${x} || set x 800   
+isset ${y} || set y 600    
+set wimboot https://gitee.com/zwj4031/ipxefm/raw/main/app/wimboot/wimboot
+set bcd https://pan.bilnn.cn/api/v3/file/sourcejump/AQam3GHx/_bZc2N--ydn2fMm1l2cLE0ZyjzRZVI6GqBBM10z-7ug*
+set bootsdi https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/BOOT/BOOT.SDI?sign=37-Tto8Sih8DE2OZV3jQOeBshw-vrBIDubPiFXIGaYU=:0
+set bootmgfw https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/BOOT/bootmgr.efi?sign=pCChi3GGJDmT39xKofScOtFoIavyellnQyzCzSLObO4=:0
+set bootmgr https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/bootmgr?sign=zInYiPQZ3DvoW-Cgw5qm1HvFn4y6et-tjCriPSn41nc=:0
+set segmono_boot https://pan.bilnn.cn/api/v3/file/sourcejump/kOgm48SA/DtptHHKfu_3JYXSN67wQ_chjL6SLhP_Xr4PC2moIBCU*
+set segoen_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/pmqED2hw/a2TUqTXwhMYL3Isp9KUakr2jSnL8JJW4LhFOIUoXA4A*
+set segoe_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/lmyG7NSb/XL9skLhAoIju5P6WJjpPX_ShnWS_UG3A0LORF_0I5ns*
+set wgl4_boot https://pan.bilnn.cn/api/v3/file/sourcejump/6WmzvXCg/TGqRb7FpPgqLNYkL8dxe_YKeZ4itB6iFafa9EpQmin0*
+set loading https://gitee.com/system-winpe-chd/zn-cloud-pe/raw/master/new-years.png
+
+
+set menu-timeout 10000
+   set menu-default newbeepe
+  
+   
+:start
+  menu Cloud NewBee iPXE Boot Menu --${platform}--${ip}
+  item --gap --             --------------------------------- PE --------------------------------
+  item 
+  item znpe11                       ZnPEx64 20221204 (New Machine)
+  item 
+  item --gap --             ---------------------------- Advanced options -----------------------
+  item
+  item msboot               Enter Windows Boot Manager Menu （BIOS)
+  item --key c config       Configure settings                                   -- c
+  item shell                Drop to iPXE shell
+  item reboot               Reboot computer
+  item --key h local        Boot from local drive                                -- h
+  item --key x exit         Exit iPXE and continue BIOS boot                     -- x
+  choose --timeout ${menu-timeout} --default ${menu-default} selected
+  goto ${selected}
+
+:local
+  sanboot --no-describe --drive 0x80
+
+:shell
+  echo Type 'exit' to get the back to the menu
+  shell
+  goto start
+ 
+:reboot
+  reboot
+ 
+:exit
+  exit
+
+:config
+  config
+  goto start
+
+
+
+:retry
+  imgfree
+  prompt Error! press any key to retry
+  goto start
+  
+:znpe11
+#newbeepe
+set bootwim https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/BOOT/11PEX64.WIM?sign=Ez86E_Xi3m4DfrA7G-bbmEfDijM2XspfFUH3medeLTc=:0 ||
+goto wimbootpe
+
+:wimbootpe
+kernel ${wimboot} ||
+#在bios和efi不同环境取相应的文件
+iseq ${platform} pcbios && initrd ${bootmgr} bootmgr ||
+iseq ${platform} efi && initrd -n bootx64.efi ${bootmgfw} ||
+
+iseq ${platform} pcbios && initrd ${bcd} bcd ||
+iseq ${platform} efi && initrd -n bcd ${bcd} ||
+
+iseq ${platform} pcbios && initrd ${bootsdi} boot.sdi ||
+iseq ${platform} efi && initrd -n boot.sdi ${bootsdi} ||
+
+iseq ${platform} pcbios && initrd ${segoen_slboot} segoen_slboot.ttf ||
+iseq ${platform} efi && initrd -n segoen_slboot.ttf ${segoen_slboot} ||
+
+iseq ${platform} pcbios && initrd ${segoe_slboot} segoe_slboot.ttf ||
+iseq ${platform} efi && initrd -n segoe_slboot.ttf ${segoe_slboot} ||
+
+iseq ${platform} pcbios && initrd ${segmono_boot} segmono_boot.ttf || 
+iseq ${platform} efi && initrd -n segmono_boot.ttf ${segmono_boot} || 
+
+iseq ${platform} pcbios && initrd ${wgl4_boot} wgl4_boot.ttf ||  #bootres.dll和wgl4_boot.ttf负责出窗，其它三个负责旋转出水
+iseq ${platform} efi && initrd -n wgl4_boot.ttf ${wgl4_boot} ||  #bootres.dll和wgl4_boot.ttf负责出窗，其它三个负责旋转出水
+
+cpair --foreground 2 0 && console --x ${x} -y ${y} --picture ${loading} --left 32 --right 32 --top 32 --bottom 48 || #loading
+iseq ${platform} pcbios && initrd ${bootwim} boot.wim ||
+boot ||
+prompt --key 0x02 --timeout 2000 Press Ctrl-B for the iPXE command line... && shell ||
