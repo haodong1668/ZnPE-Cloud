@@ -6,9 +6,8 @@ isset ${x} || set x 800
 isset ${y} || set y 600    
 set wimboot https://gitee.com/zwj4031/ipxefm/raw/main/app/wimboot/wimboot
 set bcd https://pan.bilnn.cn/api/v3/file/sourcejump/AQam3GHx/_bZc2N--ydn2fMm1l2cLE0ZyjzRZVI6GqBBM10z-7ug*
-set bootsdi https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/BOOT/BOOT.SDI?sign=37-Tto8Sih8DE2OZV3jQOeBshw-vrBIDubPiFXIGaYU=:0
-set bootmgfw https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/BOOT/bootmgr.efi?sign=pCChi3GGJDmT39xKofScOtFoIavyellnQyzCzSLObO4=:0
-set bootmgr https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/bootmgr?sign=zInYiPQZ3DvoW-Cgw5qm1HvFn4y6et-tjCriPSn41nc=:0
+set bootmgr https://lovepcos-my.sharepoint.com/personal/haodong1668_lovepcos_onmicrosoft_com/_layouts/52/download.aspx?share=EdSPEkNa2rZHrT80hpQO5OcBwnHYRWZ6cjbxS75YECS6qw
+set bootsdi hhttps://lovepcos-my.sharepoint.com/personal/haodong1668_lovepcos_onmicrosoft_com/_layouts/52/download.aspx?share=ETDZCWgKDm5FkX43pEpnOQcBJWHwNmRjLI1BrQ7APjVbWQ
 set segmono_boot https://pan.bilnn.cn/api/v3/file/sourcejump/kOgm48SA/DtptHHKfu_3JYXSN67wQ_chjL6SLhP_Xr4PC2moIBCU*
 set segoen_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/pmqED2hw/a2TUqTXwhMYL3Isp9KUakr2jSnL8JJW4LhFOIUoXA4A*
 set segoe_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/lmyG7NSb/XL9skLhAoIju5P6WJjpPX_ShnWS_UG3A0LORF_0I5ns*
@@ -64,7 +63,7 @@ set menu-timeout 10000
   
 :znpe11
 #newbeepe
-set bootwim https://pan.lovepcos.com/d/Onedrive-CN/ZnPE/Cloud/ZnPE/BOOT/8PEX86.WIM?sign=xlnTBXQ9XdCF3WyNN5oPH9TVwNIptfc_dDWP8Vu0C6E=:0 ||
+set bootwim https://lovepcos-my.sharepoint.com/personal/haodong1668_lovepcos_onmicrosoft_com/_layouts/52/download.aspx?share=Ed791WSw1kRAsm8b5DJVhPkBGKO5BjOHp2TCc2tztSYvyQ ||
 goto wimbootpe
 
 :wimbootpe
