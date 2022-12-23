@@ -71,27 +71,19 @@ goto wimbootpe
 kernel ${wimboot} ||
 #在bios和efi不同环境取相应的文件
 iseq ${platform} pcbios && initrd ${bootmgr} bootmgr ||
-iseq ${platform} efi && initrd -n bootx64.efi ${bootmgfw} ||
 
 iseq ${platform} pcbios && initrd ${bcd} bcd ||
-iseq ${platform} efi && initrd -n bcd ${bcd} ||
 
 iseq ${platform} pcbios && initrd ${bootsdi} boot.sdi ||
-iseq ${platform} efi && initrd -n boot.sdi ${bootsdi} ||
 
 iseq ${platform} pcbios && initrd ${segoen_slboot} segoen_slboot.ttf ||
-iseq ${platform} efi && initrd -n segoen_slboot.ttf ${segoen_slboot} ||
 
 iseq ${platform} pcbios && initrd ${segoe_slboot} segoe_slboot.ttf ||
-iseq ${platform} efi && initrd -n segoe_slboot.ttf ${segoe_slboot} ||
 
 iseq ${platform} pcbios && initrd ${segmono_boot} segmono_boot.ttf || 
-iseq ${platform} efi && initrd -n segmono_boot.ttf ${segmono_boot} || 
 
 iseq ${platform} pcbios && initrd ${wgl4_boot} wgl4_boot.ttf ||  #bootres.dll和wgl4_boot.ttf负责出窗，其它三个负责旋转出水
-iseq ${platform} efi && initrd -n wgl4_boot.ttf ${wgl4_boot} ||  #bootres.dll和wgl4_boot.ttf负责出窗，其它三个负责旋转出水
 
 cpair --foreground 2 0 && console --x ${x} -y ${y} --picture ${loading} --left 32 --right 32 --top 32 --bottom 48 || #loading
-iseq ${platform} pcbios && initrd ${bootwim} boot.wim ||
 boot ||
 prompt --key 0x02 --timeout 2000 Press Ctrl-B for the iPXE command line... && shell ||
