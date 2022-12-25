@@ -5,15 +5,14 @@
 isset ${x} || set x 800   
 isset ${y} || set y 600    
 set wimboot https://gitee.com/zwj4031/ipxefm/raw/main/app/wimboot/wimboot
-set bcd https://pan.bilnn.cn/api/v3/file/sourcejump/AQam3GHx/_bZc2N--ydn2fMm1l2cLE0ZyjzRZVI6GqBBM10z-7ug*
-set loading https://gitee.com/system-winpe-chd/zn-cloud-pe/raw/master/new-years.png
+set bcd https://direct.jerry-system.ml/BCD
 set bootmgr https://download.kstore.space/download/2785/ZnCloudPE/bootmgr
 set bootsdi https://download.kstore.space/download/2785/ZnCloudPE/BOOT.SDI
-set segmono_boot https://pan.bilnn.cn/api/v3/file/sourcejump/kOgm48SA/DtptHHKfu_3JYXSN67wQ_chjL6SLhP_Xr4PC2moIBCU*
-set segoen_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/pmqED2hw/a2TUqTXwhMYL3Isp9KUakr2jSnL8JJW4LhFOIUoXA4A*
-set segoe_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/lmyG7NSb/XL9skLhAoIju5P6WJjpPX_ShnWS_UG3A0LORF_0I5ns*
-set wgl4_boot https://pan.bilnn.cn/api/v3/file/sourcejump/6WmzvXCg/TGqRb7FpPgqLNYkL8dxe_YKeZ4itB6iFafa9EpQmin0*
-
+set segmono_boot https://download.kstore.space/download/2785/ZnCloudPE/segmono_boot.ttf
+set segoen_slboot https://download.kstore.space/download/2785/ZnCloudPE/segoen_slboot.ttf
+set segoe_slboot https://download.kstore.space/download/2785/ZnCloudPE/segoe_slboot.ttf
+set wgl4_boot https://download.kstore.space/download/2785/ZnCloudPE/wgl4_boot.ttf
+set loading https://gitee.com/system-winpe-chd/zn-cloud-pe/raw/master/new-years.png
 
 
 set menu-timeout 100
