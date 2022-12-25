@@ -5,9 +5,9 @@
 isset ${x} || set x 800   
 isset ${y} || set y 600    
 set wimboot https://gitee.com/zwj4031/ipxefm/raw/main/app/wimboot/wimboot
-set bcd http://znpe.lovepcos.com/BCD
-set bootmgr http://znpe.lovepcos.com/bootmgr
-set bootsdi http://znpe.lovepcos.com/BOOT.SDI
+set bcd https://download.kstore.space/download/2785/ZnCloudPE/BCD
+set bootmgr https://download.kstore.space/download/2785/ZnCloudPE/bootmgr
+set bootsdi https://download.kstore.space/download/2785/ZnCloudPE/BOOT.SDI
 set segmono_boot https://pan.bilnn.cn/api/v3/file/sourcejump/kOgm48SA/DtptHHKfu_3JYXSN67wQ_chjL6SLhP_Xr4PC2moIBCU*
 set segoen_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/pmqED2hw/a2TUqTXwhMYL3Isp9KUakr2jSnL8JJW4LhFOIUoXA4A*
 set segoe_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/lmyG7NSb/XL9skLhAoIju5P6WJjpPX_ShnWS_UG3A0LORF_0I5ns*
@@ -15,15 +15,15 @@ set wgl4_boot https://pan.bilnn.cn/api/v3/file/sourcejump/6WmzvXCg/TGqRb7FpPgqLN
 set loading https://gitee.com/system-winpe-chd/zn-cloud-pe/raw/master/new-years.png
 
 
-set menu-timeout 10000
-   set menu-default newbeepe
+set menu-timeout 100
+   set menu-default ZnCloudPE
   
    
 :start
-  menu Cloud NewBee iPXE Boot Menu --${platform}--${ip}
+  menu ZnPE CloudPE Boot Menu --${platform}--${ip}
   item --gap --             --------------------------------- PE --------------------------------
   item 
-  item znpe11                       ZnPEx64 20221204 (New Machine)
+  item ZnCloudPE                       ZnPE CloudPE 20221225 (New Machine)
   item 
   item --gap --             ---------------------------- Advanced options -----------------------
   item
@@ -61,9 +61,8 @@ set menu-timeout 10000
   prompt Error! press any key to retry
   goto start
   
-:znpe11
-#newbeepe
-set bootwim http://znpe.lovepcos.com/8PEX86.WIM ||
+:ZnCloudPE
+set bootwim https://download.kstore.space/download/2785/ZnCloudPE/BOOT.WIM ||
 goto wimbootpe
 
 :wimbootpe
