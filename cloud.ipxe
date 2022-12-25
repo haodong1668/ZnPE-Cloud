@@ -6,8 +6,8 @@ isset ${x} || set x 800
 isset ${y} || set y 600    
 set wimboot https://gitee.com/zwj4031/ipxefm/raw/main/app/wimboot/wimboot
 set bcd https://pan.bilnn.cn/api/v3/file/sourcejump/AQam3GHx/_bZc2N--ydn2fMm1l2cLE0ZyjzRZVI6GqBBM10z-7ug*
-set bootmgr http://https://znpe.acom.tk/bootmgr
-set bootsdi http://https://znpe.acom.tk/BOOT.SDI
+set bootmgr http://znpe.lovepcos.com/bootmgr
+set bootsdi http://znpe.lovepcos.com/BOOT.SDI
 set segmono_boot https://pan.bilnn.cn/api/v3/file/sourcejump/kOgm48SA/DtptHHKfu_3JYXSN67wQ_chjL6SLhP_Xr4PC2moIBCU*
 set segoen_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/pmqED2hw/a2TUqTXwhMYL3Isp9KUakr2jSnL8JJW4LhFOIUoXA4A*
 set segoe_slboot https://pan.bilnn.cn/api/v3/file/sourcejump/lmyG7NSb/XL9skLhAoIju5P6WJjpPX_ShnWS_UG3A0LORF_0I5ns*
@@ -63,7 +63,7 @@ set menu-timeout 10000
   
 :znpe11
 #newbeepe
-set bootwim http://https://znpe.acom.tk/8PEX86.WIM ||
+set bootwim http://znpe.lovepcos.com/8PEX86.WIM ||
 goto wimbootpe
 
 :wimbootpe
