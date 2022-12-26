@@ -6,7 +6,8 @@ isset ${x} || set x 800
 isset ${y} || set y 600    
 set wimboot https://gitee.com/zwj4031/ipxefm/raw/main/app/wimboot/wimboot
 set bcd https://pan.bilnn.cn/api/v3/file/sourcejump/AQam3GHx/_bZc2N--ydn2fMm1l2cLE0ZyjzRZVI6GqBBM10z-7ug*
-set bootmgr https://download.kstore.space/download/2785/ZnCloudPE/bootmgr
+set bootmgfw https://pan.bilnn.cn/api/v3/file/sourcejump/2lmDxwiG/vHYgQcbi86HbwNpgR-0zyLDnUBR8-ius8Whm-qpTx7M*
+set bootmgr https://pan.bilnn.cn/api/v3/file/sourcejump/eWNeQpSZ/8lfj6ZJ7OgbOuBzEvsNozSCf_KyoVrAi0GR864WjwoA*
 set bootsdi https://download.kstore.space/download/2785/ZnCloudPE/BOOT.SDI
 set segmono_boot https://download.kstore.space/download/2785/ZnCloudPE/segmono_boot.ttf
 set segoen_slboot https://download.kstore.space/download/2785/ZnCloudPE/segoen_slboot.ttf
