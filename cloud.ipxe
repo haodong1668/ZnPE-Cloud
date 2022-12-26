@@ -8,10 +8,10 @@ set wimboot https://gitee.com/zwj4031/ipxefm/raw/main/app/wimboot/wimboot
 set bcd https://download.kstore.space/download/2785/ZnCloudPE/boot/BCD
 set bootmgr https://download.kstore.space/download/2785/ZnCloudPE/bootmgr
 set bootsdi https://download.kstore.space/download/2785/ZnCloudPE/boot/BOOT.SDI
-set segmono_boot https://download.kstore.space/download/2785/ZnCloudPE/segmono_boot.ttf
-set segoen_slboot https://download.kstore.space/download/2785/ZnCloudPE/segoen_slboot.ttf
-set segoe_slboot https://download.kstore.space/download/2785/ZnCloudPE/segoe_slboot.ttf
-set wgl4_boot https://download.kstore.space/download/2785/ZnCloudPE/wgl4_boot.ttf
+set segmono_boot https://download.kstore.space/download/2785/ZnCloudPE/boot/fonts/segmono_boot.ttf
+set segoen_slboot https://download.kstore.space/download/2785/ZnCloudPE/boot/fonts/segoen_slboot.ttf
+set segoe_slboot https://download.kstore.space/download/2785/ZnCloudPE/boot/fonts/segoe_slboot.ttf
+set wgl4_boot https://download.kstore.space/download/2785/ZnCloudPE/boot/fonts/wgl4_boot.ttf
 set loading https://gitee.com/system-winpe-chd/zn-cloud-pe/raw/master/new-years.png
 
 
