@@ -15,7 +15,7 @@ set wgl4_boot https://download.kstore.space/download/2785/ZnCloudPE/boot/fonts/w
 set loading https://gitee.com/system-winpe-chd/zn-cloud-pe/raw/master/new-years.png
 
 
-set menu-timeout 100
+set menu-timeout 1
    set menu-default ZnCloudPE
   
    
@@ -23,7 +23,7 @@ set menu-timeout 100
   menu ZnPE CloudPE Boot Menu --${platform}--${ip}
   item --gap --             --------------------------------- PE --------------------------------
   item 
-  item ZnCloudPE                       ZnPE CloudPE 20221225 (New Machine)
+  item ZnCloudPE                       ZnPE CloudPE 
   item 
   item --gap --             ---------------------------- Advanced options -----------------------
   item
@@ -80,7 +80,7 @@ iseq ${platform} pcbios && initrd ${segoe_slboot} segoe_slboot.ttf ||
 
 iseq ${platform} pcbios && initrd ${segmono_boot} segmono_boot.ttf || 
 
-iseq ${platform} pcbios && initrd ${wgl4_boot} wgl4_boot.ttf ||  #bootres.dll和wgl4_boot.ttf负责出窗，其它三个负责旋转出水
+iseq ${platform} pcbios && initrd ${wgl4_boot} wgl4_boot.ttf || 
 
 cpair --foreground 2 0 && console --x ${x} -y ${y} --picture ${loading} --left 32 --right 32 --top 32 --bottom 48 || #loading
 iseq ${platform} pcbios && initrd ${bootwim} BOOT.WIM ||
