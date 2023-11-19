@@ -12,7 +12,6 @@ set segmono_boot https://download.kstore.space/download/2785/ZnCloudPE/boot/font
 set segoen_slboot https://download.kstore.space/download/2785/ZnCloudPE/boot/fonts/segoen_slboot.ttf
 set segoe_slboot https://download.kstore.space/download/2785/ZnCloudPE/boot/fonts/segoe_slboot.ttf
 set wgl4_boot https://download.kstore.space/download/2785/ZnCloudPE/boot/fonts/wgl4_boot.ttf
-set loading https://gitee.com/system-winpe-chd/zn-cloud-pe/raw/master/new-years.png
 
 
 set menu-timeout 1
